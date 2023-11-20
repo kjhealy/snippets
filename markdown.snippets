@@ -1,0 +1,272 @@
+snippet [
+	[${1:label}](${2:location})
+
+snippet ![
+	![${1:label}](${2:location})
+
+snippet r
+	```{r ${1:label}, ${2:options}}
+	${0}
+	```
+
+snippet rcpp
+	```{r, engine='Rcpp'}
+	#include <Rcpp.h>
+	using namespace Rcpp;
+	
+	${0}
+	
+	```
+
+
+snippet qc
+	:::: {.columns}
+	::: {.column width="${1:leftwidth}%"}
+		${0}Left column
+	:::
+
+	::: {.column width="${2:rightwidth}%" .right}
+		Right column
+	:::
+	::::
+
+
+snippet qc3
+	:::: {.columns}
+	::: {.column width="${1:leftwidth}%"}
+		${0}Left column
+	:::
+		
+	::: {.column width="${2:midwidth}%"}
+		Mid column
+	:::
+
+	::: {.column width="${3:rightwidth}%" .right}
+		Right column
+	:::
+	::::
+
+
+snippet qf
+	::::: {.fragment fragment-index=${1:index}}
+			${0}
+	:::::
+
+snippet qas
+	::: aside
+		${0}
+	:::
+
+snippet qci
+	::: {.callout-important}
+	
+	## ${1:headline}
+	
+	${0}
+	
+	:::
+
+snippet qcw
+	::: {.callout-warning}
+	
+	## ${1:headline}
+	
+	${0}
+	
+	:::
+
+snippet qcn
+	::: {.callout-note}
+	
+	## ${1:headline}
+	
+	${0}
+	
+	:::
+
+snippet qct
+	::: {.callout-tip}
+	
+	## ${1:headline}
+	
+	${0}
+	
+	:::
+
+snippet qhu
+	:::{.huge}
+		${0}
+	:::
+
+snippet qfit
+	::: {.r-fit-text}
+	${0}
+	:::
+
+snippet qsmallcode
+	::: {.smallcode}
+	${0}
+	:::
+
+snippet qfile
+	```{.${1:lang} include="${2:path}"}
+	```
+	${0}
+
+snippet qno
+	::: {.notes}
+	${0}
+	:::
+
+snippet qchunk
+	---
+	`${1:r} chunq_reveal("reveal-${2:label}", lcolw="${3:lwidth}", rcolw="${4:rwidth}", title = "${5:title}")`
+	
+	```{r reveal-${2:label}, include = FALSE}
+	 ${0}
+	```
+	---
+
+snippet qfra
+	::: {.fragment}
+	${0}
+	:::
+
+snippet qimg
+	![${1:label}](${2:location})
+
+snippet qinc
+	::: {.incremental}
+	${0}
+	:::
+
+snippet ss
+	---
+
+	# ${1:title}
+	
+	${0}
+
+
+snippet sh
+	---
+	layout: true
+	class: title title-1
+	---
+
+	# ${1:title}
+	
+	${0}
+	
+snippet sb
+	---
+	layout: false
+	class: main-title main-title-inv
+
+	# .middle.squish4.huge.kjh-orange[${1:title}]
+	
+	${0}
+	
+snippet si
+	---
+	
+	.center[![:scale 90%](${1:filepath})]
+	
+	${0}
+
+snippet sii
+	.center[![:scale 90%](${1:filepath})]
+	
+	${0}
+
+snippet sif
+	---
+	layout: false
+	
+	.center[![:scale ${1:scale}%](img/${2:filepath})]
+	
+	.right.w90.small[${3:credit}]
+	
+	${0}
+	
+
+snippet sit
+	---
+	layout: true
+	
+	.center[![:scale ${1:scale}%](img/${2:filepath})]
+	
+	.right.w90.small[${3:credit}]
+
+	
+	${0}
+
+snippet sib
+	---
+	layout: false
+	class: bottom
+	background-image: url("img/${1}")
+	background-size: cover
+	
+	## .huge.right.bottom.squish4.kjh-grey[${0}]
+
+snippet sp
+	---
+	
+	class: center middle main-title section-title-1
+
+	# .huge[.kjh-lblue[${1:header}]]
+
+	${0}
+
+snippet spp
+	---
+	
+	class: right bottom main-title section-title-1
+	
+	## .huge.right.bottom.squish4[.kjh-yellow[${1:header}]]
+	
+	${0}
+	
+
+snippet sreset
+	---
+
+	layout: true
+	class: title title-1
+	
+	---
+	
+	${0}
+
+snippet codefig
+
+	.pull-left.w45[
+	```{r codefig-${1:chunklabel}, message=FALSE, fig.show="hide", fig.width=4.8, fig.height=4.5}
+	${0}
+	```
+	]
+
+	--
+
+	.pull-right.w55[
+	```{r, echo=FALSE}
+		knitr::include_graphics(
+		knitr::fig_chunk("codefig-${1:chunklabel}", "png"))
+	```
+	]
+
+
+snippet flipchunk
+	---
+	`${1:r} chunk_reveal("reveal-${2:label}", widths = c(35,65), title = "# ${3:title}")`
+	
+	```{r reveal-${2:label}, include = FALSE}
+	 ${0}
+	```
+	---
+
+
+snippet scalef
+        .kjh-green[`scale\\\\\_`].kjh-orange[`${1:mapping}`].kjh-green[`\\\\\_`].kjh-lblue[`${2:kind}`].kjh-green[`()`]
+        ${0}
